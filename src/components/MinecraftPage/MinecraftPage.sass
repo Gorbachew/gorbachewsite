@@ -1,11 +1,22 @@
 .minecraft
+    &_wrapper
+        background-image: url('./images/background.png')
+        height: 100vh
+    &_wrapper-light
+        background: rgba(255, 255, 255, 0.7)
+        height: 100vh
     &_top-panel
         display: flex
-        flex-direction: row
+        flex-direction: column
+    &_monitoring-table
+        display: flex
+        justify-content: center
+        background: #000
+    &_server-links
+        margin-left: 2%
         margin-top: 2%
     &_ip
         font-size: 18pt
-        margin-left: 2%
     &_dynmap-link
         margin-left: 10px
         font-size: 18pt

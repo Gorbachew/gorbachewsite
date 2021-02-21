@@ -4,11 +4,19 @@ import '../MinecraftPage/MinecraftPage.sass'
 const Minecraft = () => {
     return (
         <div className='minecraft_wrapper'>
-            <div className='minecraft_top-panel'>
-                <span className='minecraft_ip'>ip: 45.93.200.27:25594</span>
-                <a className='minecraft_dynmap-link' href='http://45.93.200.27:16594/' >Карта сервера</a>
-            </div>
-        </div>  
+            <div className='minecraft_wrapper-light'>
+                <div className='minecraft_top-panel'>
+                    <a className='minecraft_monitoring-table' href="http://monitoringminecraft.ru/server/686105" target="_blank">
+                        <img src="http://monitoringminecraft.ru/status-narrow/45.93.200.27%3A25594.png" alt="Сервер проверен MonitoringMinecraft.ru" title="Сервер проверен MonitoringMinecraft.ru" width='50%'/>
+                    </a>
+                    <div className='minecraft_server-links'>
+                        <span className='minecraft_ip'>ip: 45.93.200.27:25594</span>
+                        <a className='minecraft_dynmap-link' href='http://45.93.200.27:16594/' >Карта сервера</a>
+                    </div>
+                </div>
+            </div>  
+        </div>
+            
     )
 }
 
