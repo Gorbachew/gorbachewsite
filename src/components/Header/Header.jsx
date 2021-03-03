@@ -1,9 +1,7 @@
 import React, { useRef, useContext } from 'react';
 import './Header.scss';
-import SideMenuButton from '../SideMenu/SideMenuButton';
 import useOnClickOutside from '../../hooks/onClickOutside';
 import { MenuContext } from '../../context/navState';
-import useWindowDimensions from '../Helpers/useWindowDimensions'
 
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
@@ -13,7 +11,6 @@ const Header = () => {
 
     const node = useRef();
     const { isMenuOpen, toggleMenuMode } = useContext(MenuContext);
-    const { width } = useWindowDimensions();
     const colorIcons = 'white';
 
 
