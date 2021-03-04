@@ -1,6 +1,6 @@
 import React from 'react';
 import MainPanel from '../MainPage/MainPanel/MainPanel'
-import MainInfoPanel from '../MainPage/MainInfoPanel/MainInfoPanel'
+import InfoPanel from '../MainPage/InfoPanel/InfoPanel'
 import NavState from '../../context/navState'
 import { SideMenu } from '../SideMenu/SideMenu';
 
@@ -10,7 +10,7 @@ function Main() {
       <NavState>
         <div className="App">
           <MainPanel />
-          <MainInfoPanel />
+          <InfoPanel />
           <SideMenu />
         </div>
       </NavState>

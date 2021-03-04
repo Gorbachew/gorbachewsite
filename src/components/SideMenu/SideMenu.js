@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { MenuContext } from '../../context/navState';
 import arrow from './images/arrow.svg';
-import MainButtons from '../MainPage/MainButtons/MainButtons'
+import Buttons from '../MainPage/Buttons/Buttons'
 import './SideMenuButton';
 
 const Menu = styled.nav`
@@ -72,7 +72,7 @@ SideMenu.defaultProps = {
   children: (
     <>
       <p className="textUnderBtnsGame">my games</p> 
-      <MainButtons />
+      <Buttons />
     </>
   ),
 };

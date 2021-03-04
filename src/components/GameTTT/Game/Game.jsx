@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import '../GamePage/Style/GamePage.sass';
-import Board from '../GamePage/Board/Board';
+import '../Game/Game.sass';
+import Board from '../Board/Board';
 
 const Game = () => {
-    const [history, setHistory] = useState([{squares: Array(9).fill(null)}]);
+    const [history, setHistory] = useState([{squares: Array(9).fill(null), step: ''}]);
     const [status, setStatus] = useState('');
     const [xIsNext, setXIsNext] = useState(true);
     const [stepNumber, setStepNumber] = useState(0);
@@ -35,15 +35,14 @@ const Game = () => {
     
     const handleClick = (i) => {
         const historyArr = history.slice(0, stepNumber + 1);
-        const current = historyArr[history.length - 1];
+        const current = historyArr[stepNumber];
         const squares = current.squares.slice();
-        
         if (calculateWinner(squares) || squares[i]){
             return;
         }
         squares[i] = xIsNext ? 'X' : 'O';
         setStepNumber(history.length);
-        setHistory(history.concat({squares: squares}));
+        setHistory(history.concat({squares: squares, step: xIsNext ? 'O' : 'X'}));
         setXIsNext(!xIsNext);
     }
 
@@ -52,15 +51,14 @@ const Game = () => {
 
     const moves = history.map((step, move) => {
         const desc = move ?
-            'Перейти к ходу #' + move :
-            'К началу игры';
-            return (
-                <li key={move}>
-                    <button onClick={() => jumpTo(move)}>{desc}</button>
-                </li>
-            );
+        `Ход ${move}, ходит: ${step.step}`:
+        'К началу игры';
+        return (
+            <li key={move} className='game_moves-li'>
+                <button className='game_moves-btn' onClick={() => jumpTo(move)}>{desc}</button>
+            </li>
+        );
     });
-
 
     useEffect(() => {
         const winner = calculateWinner(squares);
@@ -73,15 +71,19 @@ const Game = () => {
 
     return (
        <div className='game'>
-           <div className='game-board'>
-               <Board 
-                    squares={current.squares}
-                    onClick={(i) => handleClick(i)}
-                 />
-           </div>
-           <div className='game-info'>
-               <div>{status}</div>
-               <div>{moves}</div>
+            <div className='status'>{status}</div>
+           <div className='game_wrapper'>
+                <div className='game_board'>
+                    <Board 
+                            squares={current.squares}
+                            onClick={(i) => handleClick(i)}
+                        />
+                </div>
+                <div id='moves-wrapper' className='game_moves-wrapper'>
+                    <div>   
+                        <div className='game_moves-scroll'> {moves} </div>
+                    </div>
+                </div>
            </div>
        </div>
     );

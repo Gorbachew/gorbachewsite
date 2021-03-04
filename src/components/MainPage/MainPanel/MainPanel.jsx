@@ -1,14 +1,14 @@
 import React from 'react';
-import './MainPanel.scss'
-import MainButtons from '../MainButtons/MainButtons'
+import './MainPanel.sass'
+import Buttons from '../Buttons/Buttons'
 
 
 const MainPanel = () => {
      return(
         <div className="mainPanel">
-            <div className="logo"><p className="logo logoPart1">Gorbachew</p><p className="logo logoPart2">HUB</p></div>
-            <MainButtons /> 
-            {/* { width >= 700 && <MainButtons /> }; */}
+            <div className="logo"><p className="logo logo_logoPart1">Gorbachew</p><p className="logo logo_logoPart2">HUB</p></div>
+            <Buttons /> 
+            {/* { width >= 700 && <Buttons /> }; */}
             {/* { width >= 700 && <p className="textUnderBtnsGame">my games</p> }; */}
         </div>
      );

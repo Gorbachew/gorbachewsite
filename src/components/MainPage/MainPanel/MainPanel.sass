@@ -1,0 +1,38 @@
+.mainPanel
+	position: relative
+	background-color: #000000
+	background-image: url(./images/Veche.png)
+	background-repeat: no-repeat
+	background-size: contain
+	background-position: center
+	width: 100%
+	height: 50vh
+	@media screen and ( max-width: 700px )
+		background-size: 150%
+		background-position: 50% 40%
+		height: 25vh
+		
+
+.logo
+	margin: 0pt
+	display: flex
+	font-size: 25pt
+    padding-top: 10pt
+
+	&_logoPart1
+		color: white
+		padding-left: 30pt
+
+	&_logoPart2
+		color: red
+		font-weight: 100
+
+.textUnderBtnsGame
+	position: absolute
+	top: 50%
+	left: 50%
+	font-size: 20pt
+	transform: translate(-50%, 400%)
+	color: white
+	font-style: italic
+	font-weight: 100

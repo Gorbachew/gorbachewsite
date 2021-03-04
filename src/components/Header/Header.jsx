@@ -1,5 +1,5 @@
 import React, { useRef, useContext } from 'react';
-import './Header.scss';
+import './Header.sass';
 import useOnClickOutside from '../../hooks/onClickOutside';
 import { MenuContext } from '../../context/navState';
 
@@ -25,9 +25,17 @@ const Header = () => {
     });
 
     const showBackButton = () => {
-      return(
+      return (
         <a className="Header_Icons_Icon" href="/">
           <ArrowBackIosIcon  className="Header_Icons_Back" style={{ color: colorIcons, fontSize: 30 }} />
+        </a>
+      );
+    }
+
+    const showBillie = () => {
+      return (
+        <a href='/gaywebsite'>
+          <button className='Header_Billie'/>
         </a>
       );
     }
@@ -38,7 +46,7 @@ const Header = () => {
         <div className="Header_Icons">
 
           <div className="Header_Icons_RightIcons">
-            { getLocation() !== '/' ?  showBackButton() : <div /> }
+            { getLocation() !== '/' ?  showBackButton() : showBillie() }
           </div>
     
           <div className="Header_Icons_LeftIcons">

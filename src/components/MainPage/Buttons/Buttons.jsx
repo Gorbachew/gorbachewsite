@@ -1,10 +1,10 @@
 import React from 'react';
-import './MainButtons.sass';
+import './Buttons.sass';
 
-const MainButtons = () => {
+const Buttons = () => {
 
     return(
-        <div className="MainButtons_wrapper">
+        <div className="Buttons_wrapper">
             <a className='btn_wrapper' href='https://play.google.com/store/apps/details?id=gorbachew.pythonanywhere.ru'>
                 <div className='btn_darken'/>
                 <div className='btn btn_wayToSuccess' />
@@ -22,4 +22,4 @@ const MainButtons = () => {
 };
 
 
-export default MainButtons;
+export default Buttons;
